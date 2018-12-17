@@ -1,8 +1,9 @@
-package test;
+package tests;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
-import default package.MetodCalc;
-import defaultpackage.tax;
+import pack.MetodCalc;
+import pack.tax;
 public class ee {
 	tax tax = new tax();
 	@Test
