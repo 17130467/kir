@@ -1,3 +1,4 @@
+package pack;
 public class tax {
 	public double calcTax ( double d, double child,double proc)
 	 {
