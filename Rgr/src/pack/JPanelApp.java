@@ -1,8 +1,8 @@
 package pack;
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
+
 public class JPanelApp extends JPanel
 {
 	//создаем перемнную типа текстовое поле для результата
@@ -17,10 +17,10 @@ double res1 = 0;
  {
 //устанавливаем фон
  	setBackground(SystemColor.text);
- 	//try отлавливает исключения(ошибки) во вложенном в него коде
+ 	//try отлавливает исключения(ошибки) во вложенном в него ко-де
  try
  {
-	 /*не используем компоновку элементов, расположение элементов зададим явно*/
+	 /*не используем компоновку элементов, расположение элемен-тов зададим явно*/
  setLayout(null);
  /*создаем объект типа текстовое поле для результата*/
  final TextField txt1 = new TextField();
@@ -65,7 +65,7 @@ double res1 = 0;
  bRes.setBounds(59, 119, 97, 25);
  /*класс Font для использования шрифтов */
  Font bigFont = new Font("serif", Font.BOLD, 22);
- /*устанавливаем шрифт bigFont для текста, отображаемого в кнопке*/
+ /*устанавливаем шрифт bigFont для текста, отображаемого в кноп-ке*/
  bRes.setFont(bigFont);
  
  /*далее класс Font использыется аналогично*/
@@ -89,16 +89,11 @@ double res1 = 0;
  Font bigFontDivision = new Font("serif", Font.BOLD, 22);
  bDivision.setFont(bigFontDivision);
  
- JTextPane textPane = new JTextPane();
- textPane.setFont(new Font("Arial", Font.PLAIN, 12));
- textPane.setBackground(new Color(255, 255, 255));
- 
- textPane.setBounds(10, 192, 222, 48);
  
  /*Надпись для поясняющего текста */
  JLabel label_1 = new JLabel("Количество детей до 18 лет");
  label_1.setFont(new Font("Arial", Font.PLAIN, 13));
- label_1.setBounds(10, 279, 222, 14);
+ label_1.setBounds(10, 250, 222, 14);
 
  /*Переключатель для выбора*/
 
@@ -109,7 +104,7 @@ double res1 = 0;
  /*JSpinner элемент для ввода чисел*/
  JSpinner Ds = new JSpinner();
  Ds.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
- Ds.setBounds(10, 161, 104, 30);
+ Ds.setBounds(10, 195, 104, 30);
  
 
  
@@ -124,13 +119,12 @@ double res1 = 0;
 	 public void actionPerformed(ActionEvent arg0) {
  	}
  });
- TAXb.setBounds(157, 320, 75, 23);
+ TAXb.setBounds(157, 295, 75, 30);
  
  JLabel label_2 = new JLabel("Доход физического лица за 1 месяц");
  label_2.setFont(new Font("Arial", Font.PLAIN, 13));
- label_2.setBounds(10, 146, 222, 14);
+ label_2.setBounds(10, 160, 222, 14);
  
-
  JSpinner PROCs = new JSpinner();
  PROCs.setModel(new SpinnerNumberModel(1, 1, 100, 1));
  PROCs.setBounds(128, 350, 104, 30);
@@ -156,7 +150,6 @@ double res1 = 0;
  add(bMinus);
  add(bMulti);
  add(bDivision);
- add(textPane);
  add(label_1);
  add(Ds);
  add(CHILDs);
@@ -168,7 +161,7 @@ double res1 = 0;
  //устанавливаем слушателя на кнопку b1"1"
  b1.addActionListener(new ActionListener()
  {
-	 //реализуем функцию, связанную с событием нажатия на кнопку
+	 //реализуем функцию, связанную с событием нажатия на кноп-ку
  @Override
  public void actionPerformed(ActionEvent arg1)
  {
@@ -178,7 +171,7 @@ double res1 = 0;
  if (res==0) {
  res = Double.valueOf(txt1.getText());
  } else {
-	 /*если res (первый операнд) не равен 0, то конвертируем содержимое txt1 в Double и записываем в res1*/
+	 /*если res (первый операнд) не равен 0, то конвертируем со-держимое txt1 в Double и записываем в res1*/
  res1 = Double.valueOf(txt1.getText());
  }
  }
@@ -364,14 +357,14 @@ double res1 = 0;
  @Override
  public void actionPerformed(ActionEvent arg0)
  {
-	 /* конвертируем res и res1 в Double, заносим в num, num1 соответственно*/
+	 /* конвертируем res и res1 в Double, заносим в num, num1 со-ответственно*/
  double num = Double.valueOf(res);
  double num1 = Double.valueOf(res1);
  String strOp = op;
  /*создем обьект mc класса MetodCalc для расчета действия*/
  MetodCalc mc = new MetodCalc();
  /*вызываем у mc метод calc и передаем ему оператора и операнды*/
- /*результат работы метода ковертируем в String и заносим в переменныю strRes*/
+ /*результат работы метода ковертируем в String и заносим в пере-менныю strRes*/
  String strRes = String.valueOf(mc.calc(num, strOp, num1 ));
  /*выводим результат в txt1*/
  txt1.setText(strRes);
@@ -382,7 +375,7 @@ double res1 = 0;
  {
  @Override
  public void actionPerformed(ActionEvent arg0)
- { //получаем необходимые для расчета налога значения из соответствующих областей
+ { //получаем необходимые для расчета налога значения из соответ-ствующих областей
 	 //конвертируем значения в double
 	 //заносим значения в соответствующие переменные
 	 double d=  ((SpinnerNumberModel) Ds.getModel()).getNumber().intValue();
@@ -401,4 +394,5 @@ double res1 = 0;
  catch (ArithmeticException exception)
  {
 	 //выводим сообщения об ошибках
- System.out.println("something went wrong"); }}}
+ System.out.println("something went wrong"); }}
+}
